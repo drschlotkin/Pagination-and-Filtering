@@ -20,7 +20,6 @@ input.placeholder = 'Search for students...';
 input.type = 'text';
 button.textContent = 'Search';
 
-
 // Initialize page numbers div
 const pageDiv = document.createElement('div');
 pageDiv.className = 'pagination';
@@ -31,6 +30,7 @@ const pages = Math.ceil(list / 10);
 /* SET UP PAGE LINKS
 ====================*/
 const appendPageLinks = (list) => {
+   
    if (pages > 1) {  
 
       // Create/append elements for each page
@@ -59,7 +59,6 @@ const appendPageLinks = (list) => {
 };  
 
 
-
 /* DISPLAY STUDENTS
 ===================*/
 const showPage = (list, page) => {
@@ -77,10 +76,12 @@ const showPage = (list, page) => {
 
 // Extension of showPage()
 const displayStudents = (start, end, display) => {
+   
    for (let i = start; i < end; i++){
       students[i].style.display = display;
    };
 };
+
 
 /* SEARCH QUERY
 ===============*/
@@ -98,6 +99,7 @@ const searchBar = () => {
       }
    })
 
+   // Search for full student name
    const searchQuery = () => {
       
       if (input.value !== ''){
@@ -117,9 +119,10 @@ const searchBar = () => {
    }   
 }
 
+// List filters in real time as the user types
 const filterNames = () => {
 
-   h2.textContent = 'Students'
+   h2.textContent = 'Students';
    if (input.value != ''){
       let filterValue = input.value.toUpperCase();
       let studentList = document.querySelectorAll('.student-details')
@@ -150,4 +153,3 @@ displayStudents(10, list, 'none')
 
 // Organize list of students into seperate pages
 appendPageLinks(list)
-
