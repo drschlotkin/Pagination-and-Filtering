@@ -1,6 +1,6 @@
 # List Pagination and Filtering
 
-## Introduction
+## Details
 
 * DOM Manipulation with vanilla Javascript.
 * This application takes a list of mock students and divides them up into separate pages.
